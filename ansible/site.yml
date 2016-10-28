@@ -5,8 +5,8 @@
   remote_user: root
   gather_facts: no
   pre_tasks:
-    - name: 'install python2'
-      raw: sudo apt-get -y install python-simplejson 
+    - name: 'install python2 and aptitude'
+      raw: sudo apt-get -y install python-simplejson aptitude
 
 - include: packages.yml
 - include: users.yml
