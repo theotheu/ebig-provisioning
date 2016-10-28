@@ -4,7 +4,7 @@
 [proxmox]
 #server3.tezzt.nl
 #server7.tezzt.nl
-145.74.104.44
+#145.74.104.44
 
 [aws]
 #server8.tezzt.nl
