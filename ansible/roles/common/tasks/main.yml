@@ -23,25 +23,9 @@
 - name: Set locale languages
   locale_gen: name=en_US.UTF-8
 
-- name: Set server timezone
-  timezone: name={{ ansible_date_time.tz }}
-
-
-#- name: "Fetch current /etc/timezone file"
-#  fetch: src=/etc/timezone dest=/tmp/fetched
-#  register: timezone
-
-#- name: "Set server timezone to {{ server_timezone }}"
-#  shell: echo "{{ server_timezone }}" > /etc/timezone ; dpkg-reconfigure --frontend noninteractive tzdata
-#  when: "'{{ ansible_date_time.tz }}' != '{{ server_timezone }}'"
-
-#- name: "Set local timezone to {{ server_timezone }}"
-#  file: 
-#    src=/usr/share/zoneinfo/{{ server_timezone }}
-#    dest=/etc/localtime 
-#    state=link
-#    force=yes
-    
+#- name: Set server timezone
+#  timezone: name={{ ansible_date_time.tz }}
+   
 - name: Enable welcome message
   replace:
     dest=/etc/ssh/sshd_config
