@@ -22,7 +22,7 @@
   shell: apt-get -q -y autoremove
 
 - name: Set locale languages
-  shell: export LANGUAGE=en_US.UTF-8; export LANG=en_US.UTF-8; export LC_ALL=en_US.UTF-8; locale-gen en_US.UTF-8; dpkg-reconfigure locales; locale-gen en_US.UTF-8; update-locale LANG=en_US.UTF-8
+  locale_gen: name=en_US.UTF-8
 
 - name: "Set server timezone to {{ server_timezone }}"
   timezone: name={{ ansible_date_time.tz }}

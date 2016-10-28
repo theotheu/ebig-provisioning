@@ -1,14 +1,6 @@
 ---
-
-- name: Change port number
-  replace:
-    dest=/etc/ssh/sshd_config
-    regexp='^Port 22'
-    replace='Port {{ ssh_port }}'
-    backup=yes
-  notify: restart ssh
   
-- name: Change port number
+- name: prevent root login
   replace:
     dest=/etc/ssh/sshd_config
     regexp='^PermitRootLogin yes'
