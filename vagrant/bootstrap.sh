@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
 
-touch killroywashere
+echo "test from bootstrap.sh" > test

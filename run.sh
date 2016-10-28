@@ -7,8 +7,8 @@ cd ~
 mkdir -p code
 cd code
 git clone https://github.com/theotheu/ebig-provisioning.git
-cd ebig-provisioning
+cd ebig-provisioning/ansible
 
-ansible-playbook setup.yml --ask-sudo-pass --module-path ./ansible --limit "$(hostname)"
-
+#ansible-playbook setup.yml --ask-sudo-pass --module-path ./ansible --limit "$(hostname)"
+ansible-playbook -i hosts site.yml
 exit 0
