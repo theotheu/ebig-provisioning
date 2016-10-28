@@ -8,4 +8,4 @@
 
 
   - include: packages.yml
-#  - include: users.yml
+  - include: users.yml
