@@ -1,15 +1,11 @@
----
-
 - hosts: all
-  sudo: yes
-  remote_user: root
-  gather_facts: no
-  pre_tasks:
-    - name: 'install python2 and aptitude'
-      raw: sudo apt-get -y install python-simplejson aptitude
+  connection: local
+  become: true
+  become_user: root
+
+#  roles:
+#    - common
+
 
 - include: packages.yml
 - include: users.yml
-
-#### Hardening should be the last step
-- include: hardening.yml
