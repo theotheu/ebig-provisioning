@@ -4,7 +4,5 @@
   become_user: root
   roles:
     - common
-
-
-#- include: packages.yml
-#- include: users.yml
+    - users
+    - hardening
