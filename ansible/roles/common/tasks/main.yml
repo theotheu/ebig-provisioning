@@ -24,7 +24,7 @@
 - name: Set locale languages
   locale_gen: name=en_US.UTF-8
 
-- name: "Set server timezone to '{{ server_timezone }}'"
+- name: "Set server timezone"
   timezone: name={{ ansible_date_time.tz }}
 
 
