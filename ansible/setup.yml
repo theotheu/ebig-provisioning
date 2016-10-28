@@ -2,5 +2,8 @@
   connection: local
   become: true
   become_user: root
-  roles:
-    - common
+
+#  roles:
+#    - common
+  - include: packages.yml
+  - include: users.yml
