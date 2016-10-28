@@ -1,0 +1,58 @@
+---
+
+
+- name: Update and upgrade apt packages
+  apt: >
+    upgrade=yes
+    update_cache=yes
+    cache_valid_time=3600
+    
+- name: Install packages
+  action:
+    apt pkg={{ item }} 
+    state=present
+  with_items:
+  - vim
+  - wget
+  - git
+  - curl
+  - tmux
+
+- name: Autoremove unnecessary packages
+  shell: apt-get -q -y autoremove
+
+- name: Set locale languages
+  shell: export LANGUAGE=en_US.UTF-8; export LANG=en_US.UTF-8; export LC_ALL=en_US.UTF-8; locale-gen en_US.UTF-8; dpkg-reconfigure locales; locale-gen en_US.UTF-8; update-locale LANG=en_US.UTF-8
+
+- name: "Set server timezone to {{ server_timezone }}"
+  timezone: name={{ ansible_date_time.tz }}
+
+
+#- name: "Fetch current /etc/timezone file"
+#  fetch: src=/etc/timezone dest=/tmp/fetched
+#  register: timezone
+
+#- name: "Set server timezone to {{ server_timezone }}"
+#  shell: echo "{{ server_timezone }}" > /etc/timezone ; dpkg-reconfigure --frontend noninteractive tzdata
+#  when: "'{{ ansible_date_time.tz }}' != '{{ server_timezone }}'"
+
+#- name: "Set local timezone to {{ server_timezone }}"
+#  file: 
+#    src=/usr/share/zoneinfo/{{ server_timezone }}
+#    dest=/etc/localtime 
+#    state=link
+#    force=yes
+    
+- name: Enable welcome message
+  replace:
+    dest=/etc/ssh/sshd_config
+    regexp='^#Banner /etc/issue.net'
+    replace='Banner /etc/issue.net'
+    backup=yes
+    
+- name: Set welcome message
+  template:
+    src=welcome_message.j2
+    dest=/etc/issue.net    
+    backup=yes
+  notify: restart ssh
