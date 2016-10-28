@@ -1,4 +1,5 @@
 [vagrant]
+localhost              ansible_connection=local
 #localhost:2222
 
 [proxmox]
