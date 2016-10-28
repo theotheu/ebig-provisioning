@@ -7,5 +7,5 @@
 #    - common
 
 
-  - include: packages.yml
+- include: packages.yml
 #  - include: users.yml
