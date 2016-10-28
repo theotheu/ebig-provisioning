@@ -10,5 +10,5 @@ git clone https://github.com/theotheu/ebig-provisioning.git
 cd ebig-provisioning/ansible
 
 #ansible-playbook setup.yml --ask-sudo-pass --module-path ./ansible --limit "$(hostname)"
-ansible-playbook -i hosts setup.yml
+ansible-playbook -i "localhost" setup.yml
 exit 0
