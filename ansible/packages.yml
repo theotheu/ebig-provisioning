@@ -1,7 +1,7 @@
 ---
 
 - name: Install packages
-  #hosts: all
+  hosts: all
   user: root
   
   roles:
