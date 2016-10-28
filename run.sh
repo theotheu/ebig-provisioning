@@ -11,5 +11,5 @@ cd ebig-provisioning/ansible
 
 #ansible-playbook setup.yml --ask-sudo-pass --module-path ./ansible --limit "$(hostname)"
 #ansible-playbook -i "localhost" setup.yml
-ansible-playbook -i "localhost" setup.yml
+ansible-playbook -i "localhost" local.yml
 exit 0
