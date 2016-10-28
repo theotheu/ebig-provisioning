@@ -24,5 +24,5 @@
 - include: iptables.yml
 - include: prevent_root_log_in.yml
 
-- name: Finally reboot the mahine to make sure all services are active with latest configurations
+- name: Finally reboot the machine to make sure all services are active with latest configurations
   command: shutdown -r now
