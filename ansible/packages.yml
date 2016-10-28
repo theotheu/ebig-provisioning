@@ -1,8 +1,7 @@
 ---
 
 - name: Install packages
-  connection: local
-  hosts: all
+  #hosts: all
   user: root
   
   roles:
