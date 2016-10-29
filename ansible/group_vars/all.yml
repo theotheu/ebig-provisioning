@@ -1,5 +1,5 @@
 # The name of the OS user (johndoe, ubuntu, vagrant)
-username: theotheu
+username: vagrant
 password: 'PASSWORD'
 
 webdev_password: 'PASSWORD'
