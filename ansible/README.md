@@ -43,6 +43,15 @@ This will run the common, users and hardening package.
 ## Common
 With common is the base configuration of the machine set with date, locales and a few programmes.
 
+The packages for Apache, MySQL and PHP LAMP development are installed.
+
+The packages for Node.js and MongoDb for MEAN development are installed.
+
+For Java addicts are the packages installed as wel.
+
+Install the *packages* with ansible from this directory
+```ansible-playbook -i hosts packages.yml -vvvv```
+
 ## Users
 With users are two users installed.
 
