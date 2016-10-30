@@ -1,6 +1,6 @@
 [vagrant]
-localhost              ansible_connection=local
-#localhost:2222
+#localhost              ansible_connection=local
+localhost:2222
 
 [proxmox]
 #server3.tezzt.nl
