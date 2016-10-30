@@ -23,7 +23,7 @@ Set privileges
 - `chmod 0700 /root/.ssh`
 - `chmod 0600 /root/.ssh/authorized_keys`
 
-Make sure root use has access. You probably need to change the file `/etc/ssh/sshd_config` and set `PermitRootLogin` to `yes`.
+Make sure root user has access. You probably need to change the file `/etc/ssh/sshd_config` and set `PermitRootLogin` to `yes`.
 
 ## Configure 
 - Copy file ```group_vars/all.local``` to ```group_vars/all``` and modify the variables.
@@ -41,16 +41,7 @@ This will run the common, users and hardening package.
 # Documentation
 
 ## Common
-With common is the base configuration of the machine set with date and locales.
-
-The packages for Apache, MySQL and PHP LAMP development are installed.
-
-The packages for Node.js and MongoDb for MEAN development are installed.
-
-For Java addicts are the packages installed as wel.
-
-Install the *packages* with ansible from this directory
-```ansible-playbook -i hosts packages.yml -vvvv```
+With common is the base configuration of the machine set with date, locales and a few programmes.
 
 ## Users
 With users are two users installed.
