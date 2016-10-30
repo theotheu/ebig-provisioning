@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 sudo apt-get -y install software-properties-common aptitude git python-simplejson
 sudo apt-add-repository -y ppa:ansible/ansible
 sudo apt-get update
@@ -14,7 +16,6 @@ cd code
 git clone https://github.com/theotheu/ebig-provisioning.git
 cd ebig-provisioning/ansible
 
-#ansible-playbook setup.yml --ask-sudo-pass --module-path ./ansible --limit "$(hostname)"
-#ansible-playbook -i "localhost" setup.yml
+
 ansible-playbook local.yml  --connection=local
 exit 0

@@ -5,4 +5,7 @@
   user: root
   
   roles:
-   - common
+   - java
+   - mongodb
+   - node
+   - lamp
