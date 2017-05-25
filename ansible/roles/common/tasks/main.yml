@@ -32,7 +32,7 @@
 
 - name: Set locale languages
   locale_gen: name=en_US.UTF-8 
-  state: present
+  #state: present
 
 - name: Enable welcome message
   replace:
