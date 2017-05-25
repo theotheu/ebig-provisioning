@@ -20,6 +20,7 @@ cd ebig-provisioning/ansible
 # @see issue https://github.com/ansible/ansible/issues/10698 
 # Beste workaround is to not accept variables from the client 
 sed -i 's/AcceptEnv/# AcceptEnv/' /etc/ssh/sshd_config
+service ssh restart
 
 ansible-playbook local.yml  --connection=local
 exit 0
