@@ -33,9 +33,6 @@
 - name: Set locale languages
   locale_gen: name=en_US.UTF-8
 
-- name: set the locale
-  command: sed -i 's/AcceptEnv/# AcceptEnv/' /etc/ssh/sshd_config
-
 - name: Enable welcome message
   replace:
     dest=/etc/ssh/sshd_config
