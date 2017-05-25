@@ -1,0 +1,6 @@
+# Issue with locale
+# https://github.com/ansible/ansible/issues/10698
+Host *
+        ForwardAgent no
+        ControlMaster=auto
+        ControlPersist=60s
