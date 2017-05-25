@@ -31,7 +31,8 @@
   when: "'packages will be REMOVED' in check_autoremove.stdout"
 
 - name: Set locale languages
-  locale_gen: name=en_US.UTF-8 state=present
+  locale_gen: name=en_US.UTF-8 
+  state: present
 
 - name: Enable welcome message
   replace:
